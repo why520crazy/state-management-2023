@@ -24,7 +24,7 @@ const router = createBrowserRouter([
     element: (
       <>
         <header>
-          <Link to="todos">Todos</Link> | <Link to="counter">Counter</Link> |{" "}
+          <Link to="todos">Redux Todos</Link> | <Link to="counter">Counter</Link> |{" "}
           <Link to="mobx-todos">MobX Todos</Link> |{" "}
           <Link to="recoil-todos">Recoil Todos</Link> |{" "}
           <Link to="rxjs-todos">RxJS Todos</Link>

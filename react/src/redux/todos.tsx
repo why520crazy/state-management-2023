@@ -74,8 +74,8 @@ export function TodoList() {
     return state.todos;
   });
   const uncompletedTodoCount = getUncompletedTodoCount(todos);
-  
-  // const [addText, setAddText] = useState("");
+
+  const [addText, setAddText] = useState("");
   return (
     <>
       <ul>
@@ -84,26 +84,26 @@ export function TodoList() {
             key={todo.id}
             onClick={() => dispatch({ type: "TOGGLE_TODO", id: todo.id })}
           >
-            {todo.text}
+            {todo.text} - {todo.completed ? "completed" : "uncompleted"}
           </li>
         ))}
       </ul>
       Uncompleted Todo Count: {uncompletedTodoCount}
-      {/* <input
+      <input
         type="input"
         value={addText}
         onChange={(event) => {
           setAddText(event.target.value);
         }}
-      ></input> */}
-      {/* <button
+      ></input>
+      <button
         onClick={() => {
           dispatch(addTodo(addText));
           setAddText("");
         }}
       >
         Add
-      </button> */}
+      </button>
     </>
   );
 }
