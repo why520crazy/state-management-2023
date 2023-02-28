@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "install": "cd ./react && npm install",
+    "install": "cd ./react && npm install && cd ../angular && npm install",
     "start": "cd ./react && npm run start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

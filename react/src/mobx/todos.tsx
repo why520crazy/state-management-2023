@@ -53,25 +53,23 @@ class TodoListStore {
   }
 }
 
-export const TodosView = observer(
-  ({ store }: { store: TodoListStore }) => {
-    useEffect(() => {
-      store.fetchTodos();
-    }, []);
-    return (
-      <>
-        <ul>
-          {store.todos.map((todo) => (
-            <li key={todo.id} onClick={() => store.toggleTodo(todo.id)}>
-              {todo.text} - {!!todo.completed ? "true" : "false"}
-            </li>
-          ))}
-        </ul>
-        Uncompleted Todo Count: {store.uncompletedTodoCount}
-      </>
-    );
-  }
-);
+export const TodosView = observer(({ store }: { store: TodoListStore }) => {
+  useEffect(() => {
+    store.fetchTodos();
+  }, []);
+  return (
+    <>
+      <ul>
+        {store.todos.map((todo) => (
+          <li key={todo.id} onClick={() => store.toggleTodo(todo.id)}>
+            {todo.text} - {!!todo.completed ? "true" : "false"}
+          </li>
+        ))}
+      </ul>
+      Uncompleted Todo Count: {store.uncompletedTodoCount}
+    </>
+  );
+});
 
 export const todoListStore = new TodoListStore();
 
@@ -79,11 +77,8 @@ function App() {
   return <TodosView store={todoListStore}></TodosView>;
 }
 
-let a = 10;
-let b = 20;
-let c = a + b; // 计算得到 30
-a = 20;
-console.log(c); // 还是30
-
-
-
+// let a = 10;
+// let b = 20;
+// let c = a + b; // 计算得到 30
+// a = 20;
+// console.log(c); // 还是30

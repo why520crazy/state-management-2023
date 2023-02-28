@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let item of store.todosWithRefs$ | async">
+    {{item.text}} - {{item.refs.assignee.display_name}}
+  </li>
+</ul>
